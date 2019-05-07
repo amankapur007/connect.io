@@ -1,0 +1,50 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Profile</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div class="text-center">
+		<img [src]="user.avatar" class="rounded" alt="...">
+    <br><button type="button" class="btn btn-icon btn-outline-dark"><ion-icon name="create" (click)="upload()"></ion-icon></button>
+  </div>
+  	<form>
+      <div class="input-group flex-nowrap">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping">E</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping" [(ngModel)]="user.email" name="email" readonly>
+</div>
+			<div class="input-group flex-nowrap">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping">N</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="addon-wrapping" [(ngModel)]="user.name" name="name">
+</div>
+<div class="input-group lex-nowrap">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">C</label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01" name="country" [(ngModel)]="country">
+    <option [ngValue]="country" *ngFor="let country of countries; let i = index">             {{country.name}}</option>
+  </select>
+</div>
+<div class="input-group flex-nowrap">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping">P</span>
+    <span class="input-group-text">{{country.dial_code}}</span>
+  </div>
+  <input type="number" class="form-control" placeholder="Phone Number" aria-label="number" aria-describedby="addon-wrapping" [(ngModel)]="user.phoneNumber" name="phoneNumber">
+</div>
+<div class="input-group flex-nowrap">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping">O</span>
+  </div>
+  <input type="number" class="form-control" placeholder="One Time Passcode" aria-label="number" aria-describedby="addon-wrapping" [(ngModel)]="user.otp" name="otp">
+</div>
+<button type="submit" class="btn btn-primary btn-right btn-1" (click)="sendOtp(user)" *ngIf="sendOtpCheck">Send OTP</button>
+<button type="submit" class="btn btn-primary btn-right btn-1" (click)="Verify(user)" *ngIf="!sendOtpCheck">Save</button>
+</form>
+
+</ion-content>
