@@ -1,27 +1,53 @@
 <ion-header>
-	<ion-navbar>
-		<ion-title>Login</ion-title>
-	</ion-navbar>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-card class="curved">
-    <img class="curved" src="https://cdn.jsdelivr.net/gh/amankapur007/connect-io-05@master/4286608.png" alt="">
+  <img class="curved" src="../../assets/imgs/logo_transparent.png" alt="" />
+  <ion-card padding>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+          [(ngModel)]="account.email"
+          name="email"
+        />
+        <small id="emailHelp" class="form-text text-muted"
+          >We'll never share your email with anyone else.</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Password"
+          [(ngModel)]="account.password"
+          name="password"
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary btn-right btn-2"
+        (click)="login()"
+      >
+        Login
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary btn-right btn-1"
+        (click)="navigateToPage('RegisterComponent')"
+      >
+        Register
+      </button>
+    </form>
   </ion-card>
-	<ion-card padding>
-		<form>
-			<div class="form-group">
-				<label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="account.email" name="email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="account.password" name="password">
-  </div>
-  <button type="submit" class="btn btn-primary btn-right btn-2" (click)="login()">Login</button>
-  <button type="submit" class="btn btn-primary btn-right btn-1" (click)="navigateToPage('RegisterComponent')">Register</button>
-</form>
-  </ion-card>
-  
 </ion-content>

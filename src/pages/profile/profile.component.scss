@@ -1,33 +1,35 @@
-ion-content {
-  background-image: linear-gradient(
-    to left top,
-    #170235,
-    #131544,
-    #0e2453,
-    #063260,
-    #00416c
-  );
-}
+app-profile {
+  ion-content {
+    background-image: linear-gradient(
+      to left top,
+      #170235,
+      #131544,
+      #0e2453,
+      #063260,
+      #00416c
+    );
+  }
 
-.rounded {
-  margin-top: 5%;
-  width: 200px;
-  height: 200px;
-  border-radius: 10rem !important;
-}
+  .rounded {
+    margin-top: 5%;
+    width: 200px;
+    height: 200px;
+    border-radius: 10rem !important;
+  }
 
-.input-group {
-  margin-top: 5%;
-}
+  .input-group {
+    margin-top: 5%;
+  }
 
-.btn-icon {
-  position: relative;
-  bottom: 27px;
-}
+  .btn-icon {
+    position: relative;
+    bottom: 27px;
+  }
 
-.btn-1 {
-  background: #170235;
-  float: right;
-  margin-top: 5%;
-  border: solid 1px black;
+  .btn-1 {
+    background: #170235;
+    float: right;
+    margin-top: 5%;
+    border: solid 1px black;
+  }
 }
