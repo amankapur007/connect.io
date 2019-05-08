@@ -6,9 +6,9 @@ import { StatusBar } from "@ionic-native/status-bar";
 
 import { MyApp } from "./app.component";
 import { AngularFireModule } from "@angular/fire";
-import { AngularFirestoreModule } from "@angular/fire/firestore";
-import { AngularFireStorageModule } from "@angular/fire/storage";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { Camera } from "@ionic-native/camera";
 import { CONFIG } from "./app.config";
 import { PageModule } from "../pages/page.module";
 
@@ -19,6 +19,7 @@ import { PageModule } from "../pages/page.module";
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(CONFIG.FIREBASE_CONFIG),
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     PageModule
   ],
   bootstrap: [IonicApp],
@@ -26,7 +27,8 @@ import { PageModule } from "../pages/page.module";
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     SplashScreen,
-    StatusBar
+    StatusBar,
+    Camera
   ]
 })
 export class AppModule {}
